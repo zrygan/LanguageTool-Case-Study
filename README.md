@@ -14,6 +14,15 @@ The case study can be viewed here [Case Study on the Filipino Language using The
 
 ## How To
 
+### Requirements
+
+- JDK 17
+
+**This project does not require*:
+
+- Maven or Gradle
+- Or, *rebuilding* the LanguageTool source code.
+
 ### Simple Grammar
 
 Simply run the batch file, if on Windows:
