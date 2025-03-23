@@ -1,0 +1,13 @@
+// {
+//     "files.exclude": {
+//         "**/META-INF/": true,
+//         // "**/libs/": true,
+//         "**/third-party-licenses/": true,
+//         "**/org/languagetool/tools/": true,
+//         "**/org/languagetool/tokenizers/": true,
+//         "**/org/languagetool/tagging/": true,
+//         "**/org/languagetool/synthesis/": true,
+//         "**/org/languagetool/chunking/": true,
+//         "**/org/languagetool/MessagesBundle*": true,
+//     }
+// }
