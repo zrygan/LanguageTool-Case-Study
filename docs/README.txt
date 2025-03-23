@@ -4,4 +4,7 @@ All files that can be modified for the case study:
     Tagalog     `org\languagetool\language\Tagalog.class`
 
 Commands:
+    LT_ENCODE   Encoding of vocaulary
+    LT_DECODE   Decode dictionary file to make into human-readable text file
+    LT_RUN      Run the jar file of the LanguageTool
     
