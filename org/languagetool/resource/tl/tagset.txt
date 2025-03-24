@@ -42,12 +42,12 @@ Z	Other
 PRONOUN:				[tag] [grammatical person] [plurality]
 
 Tag:
-PANP	“ang” Pronouns
-PNGP	“ng” Pronouns
-PSAP	“sa” Pronouns
-PAND	“ang” Demonstratives
-PNGD	“ng” Demonstratives
-PSAD	“sa” Demonstratives
+PANP	ï¿½angï¿½ Pronouns
+PNGP	ï¿½ngï¿½ Pronouns
+PSAP	ï¿½saï¿½ Pronouns
+PAND	ï¿½angï¿½ Demonstratives
+PNGD	ï¿½ngï¿½ Demonstratives
+PSAD	ï¿½saï¿½ Demonstratives
 PFOP	Found Pronouns
 PINP	Interrogative Pronouns
 PCOP	Comparison Pronouns
@@ -179,8 +179,8 @@ IRUN	Uncertain Response
 
 
 LIGATURE:
-LINA	Ligature “na”
-LIPA	Ligature “pa”
+LINA	Ligature ï¿½naï¿½
+LIPA	Ligature ï¿½paï¿½
 
 
 INDEPENDENT PARTICLE:
