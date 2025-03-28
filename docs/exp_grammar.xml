@@ -1,6 +1,10 @@
-<?xml version="2.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.css" title="Easy editing stylesheet" ?>
+
+<!-- <?xml version="2.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../print.xsl" ?>
-<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?>
+<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?> -->
 
 <!--    Tagalog and Bicolano Language Grammar
         By Stephen Borja, Justin Ching, and Zhean Ganituen (2025)
@@ -26,7 +30,7 @@
  -->
 
 <rules>
-    <category name="D-R R-D Change">
+    <category id="d-r_r-d" name="D-R R-D Change">
         <rule id="daw_raw" name="change daw -> raw">
             <pattern case_sensitive="no" mark_from="1">
                 <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
@@ -64,7 +68,7 @@
         </rule>
     </category>
 
-    <category name="Ng v. Nang">
+    <category id="ng_nang" name="Ng v. Nang">
         <rule id="verb_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs">
             <pattern case_sensitive="no" mark_from="1">
                 <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
@@ -161,7 +165,7 @@
 
     </category>
 
-    <category name="Gitling Usage">
+    <category id="gitling" name="Gitling Usage">
         <rule id="alas_" name="use to detect a single word alas">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">((alas)|(ala))-?</token> 
@@ -208,11 +212,26 @@
 
     <!-- Bikolano Section -->
 
-    <category name ="Object-Focused Future Tense">
+    <category id="bikolano_object_tense" name ="Object-Focused Future Tense">
+        <rule id="on_to_hon" name="'hon' is used if root word ends with a vowel.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">.∗[aeiou]on</token>
+            </pattern>
+            <message>End the word with "hon" instead of "on" because the root word ends with a vowel.</message>
+            <short>Replace "hon" with "on" if word ends with a vowel.</short>
+        </rule>
 
+        <rule id="hon_to_on" name="'on' is used if root word ends with a consonant.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">.∗[^aeiou]hon</token>
+            </pattern>
+            <message>End the word with "on" instead of "hon" because the root word ends with a consonant.</message>
+            <short>Replace "on" with "hon" if word ends with a consonant.</short>
+        </rule>
+        
     </category>
 
-    <category name ="U-O Distribution">
+    <category id="u-o_distribution" name ="U-O Distribution">
         <!-- cases:
                 1. basic case
                 2. Object-Focused Future Tense
