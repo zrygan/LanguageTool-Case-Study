@@ -1,0 +1,223 @@
+<?xml version="2.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?>
+
+<!--    Tagalog and Bicolano Language Grammar
+        By Stephen Borja, Justin Ching, and Zhean Ganituen (2025)
+
+        This is a modified grammar file, and not the original grammar file in 
+        LanguageTool which is by Nathaniel Oco and Allan Borra (2011).
+        This is a modified version of the original grammar.xml file 
+        that was created by the original developers of the project. 
+        
+        This library is free software; you can redistribute it and/or
+        modify it under the terms of the GNU Lesser General Public
+        License as published by the Free Software Foundation; either
+        version 2.1 of the License, or (at your option) any later version.
+
+        This library is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+        Lesser General Public License for more details.
+
+        You should have received a copy of the GNU Lesser General Public
+        License along with this library; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA 
+ -->
+
+<rules>
+    <category name="D-R R-D Change">
+        <rule id="daw_raw" name="change daw -> raw">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
+                <token>daw</token>
+            </pattern>
+            <message>Use <suggestion>\1 raw</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "raw".</message>
+            <short>Daw to raw if word ends in a vowel</short>
+        </rule>
+
+        <rule id="raw_daw" name="change raw -> daw">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+                <token>raw</token>
+            </pattern>
+            <message>Use <suggestion>\1 daw</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "daw".</message>
+            <short>Raw to daw if word ends in a consonant</short>
+        </rule>
+
+        <rule id="din_rin" name="change din -> rin">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
+                <token>din</token>
+            </pattern>
+            <message>Use <suggestion>\1 rin</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "rin".</message>
+            <short>Din to rin if word ends in a vowel</short>
+        </rule>
+
+        <rule id="rin_din" name="change rin -> din">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+                <token>rin</token>
+            </pattern>
+            <message>Use <suggestion>\1 din</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "din".</message>
+            <short>Rin to din if word ends in a consonant</short>
+        </rule>
+    </category>
+
+    <category name="Ng v. Nang">
+        <rule id="verb_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                <token>ng</token>
+                <token postag="AV.*|AD.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
+            <short>Ng to Nang before adverbs</short>
+            <!-- <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example> -->
+		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
+        </rule>
+
+        <rule id="verb_pronoun_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs (with pronoun)">
+            <pattern case_sensitive="no" mark_from="2">
+                <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                <token postag="(PANP|PNGP|PSAP|PAND|PNGD|PSAD|PFOP|PINP|PCOP|PIDP|POTH).*" postag_regexp="yes"/> <!-- this is the pronoun -->
+                <token>ng</token>
+                <token postag="AV.*|AD.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>nang \4</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
+            <short>Ng to Nang before adverbs (with pronoun)</short>
+            <!-- <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example> -->
+		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
+        </rule>
+
+        <rule id="noong_to_nang" name="case 2. suggest 'noong' to 'nang'">
+            <pattern case_sensitive="no">
+                <token>noong</token>
+                <token postag="VACF.*|AV.*" postag_regexp="yes"/>
+            </pattern>
+            <message>You can optionally replace "Noong \2" with "Nang \2".</message>
+            <short>Suggestion to use Nang instead of Noong</short>
+        </rule>
+
+        <rule id="ng_to_nang" name="case 3. change 'ng' to 'nang' if used before a conjunction">
+            <pattern case_sensitive="no">
+                <token>ng</token>
+                <token postag="CO.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>nang \3</suggestion>. "Nang" is used to represent the compounded "na" + "-ng" if it's before a conjunction.</message>
+            <short>Replace "ng" with "nang" before conjunctions to represent the compounded "na" + "-ng".</short>
+            <!-- <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example> -->
+		    <!-- <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example> -->
+        </rule>
+
+        <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' to 'para' to 'nang'">
+            <pattern case_sensitive="no">
+                <token regexp="yes">upang|para</token>
+                <token postag="V.*" postag_regexp="yes"/>
+            </pattern>
+            <message>You can optionally replace "\1 \2" with "Nang \2".</message>
+            <short>Suggestion to use Nang instead of Upang or Para</short>
+        </rule>
+
+        <rule id="verb_ng_verb" name="case 5. used inbetween repeated verbs">
+            <pattern case_sensitive="no">
+                <token postag="V.*" postag_regexp="yes" match="1"/>
+                <token>ng</token>
+                <token postag="V.*" postag_regexp="yes" match="1"/>
+            </pattern>
+            <message>Use <suggestion>\1 nang \3</suggestion>. "Nang" is used inbetween repeated verbs.</message>
+            <short>Replace "ng" with "nang" inbetween repeated verbs.</short>
+        </rule>
+
+        <rule id="verb_nang_difverb" name="case 5. used inbetween repeated verbs (verbs dont match)">
+            <pattern case_sensitive="no">
+                <token postag="V.*" postag_regexp="yes" match="1"/>
+                <token>nang</token>
+                <token postag="V.*" postag_regexp="yes" match="2" negate_pos="1"/>
+            </pattern>
+            <message>Use <suggestion>\1 nang \1</suggestion>. The verbs must be the same.</message>
+            <short>Replace 3rd token verb with 1st token verb inbetween repeated verbs.</short>
+        </rule>
+
+        <rule id="noun_nang_noun" name="'ng' is used to denote possession (noun)">
+            <pattern case_sensitive="no">
+                <token postag="N.*" postag_regexp="yes"/>
+                <token>nang</token>
+                <token postag="N.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote noun possession.</message>
+            <short>Replace "nang" with "ng" to denote possession.</short>
+        </rule>
+
+        <rule id="verb_nang_noun" name="'ng' is used to denote possession (verb)">
+            <pattern case_sensitive="no">
+                <token postag="V.*" postag_regexp="yes"/>
+                <token>nang</token>
+                <token postag="N.*" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote verb possession.</message>
+            <short>Replace "nang" with "ng" to denote possession.</short>
+        </rule>
+
+    </category>
+
+    <category name="Gitling Usage">
+        <rule id="alas_" name="use to detect a single word alas">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">((alas)|(ala))-?</token> 
+            </pattern>
+            <message>ala/s is not a root word.</message>
+        </rule>
+            <rule id="ala_gitling_invalid_hour" name="used to correct ala">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">ala-(([02-9]|([0-9][0-9])+)|(?!una)[a-zA-Z]+)</token> <!-- not 1 -->
+            </pattern>
+            <message>Use "ala" with a valid hour (1).</message>
+        </rule>
+        <rule id="alas_gitling_invalid_hour" name="use to correct hour of the day">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">alas-((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))+)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token> <!-- not 1-12 -->
+            </pattern>
+            <message>Use "alas-" with a valid hour (2-12).</message>
+        </rule>
+	    <rule id="ala_no_gitling_hour" name="use to add gitling">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">ala(1|una)</token> <!-- no gitling -->
+            </pattern>
+            <message>Add a - inbetween ala and the hour</message>
+        </rule>
+        <rule id="alas_no_gitling_hour" name="use to add gitling">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">alas([2-9]|([1][0-2])|(dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose))</token> <!-- not 1-12 -->
+            </pattern>
+            <message>Add a - inbetween alas and the hour</message>
+        </rule>
+        <rule id="ala_no_gitling_invalid_hour" name="use to add gitling">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">ala(([02-9]|([0-9][0-9])+)|(?!una)[a-rt-zA-RT-Z][a-zA-Z]+)</token> <!-- not 1-12 -->
+            </pattern>
+            <message>Add a - inbetween ala and the hour and make the hour valid</message>
+        </rule>
+        <rule id="alas_no_gitling_invalid_hour" name="use to add gitling">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">alas((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))+)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token> <!-- not 1-12 -->
+            </pattern>
+            <message>Add a - inbetween alas and the hour and make the hour valid</message>
+        </rule>
+    </category>
+
+    <!-- Bikolano Section -->
+
+    <category name ="Object-Focused Future Tense">
+
+    </category>
+
+    <category name ="U-O Distribution">
+        <!-- cases:
+                1. basic case
+                2. Object-Focused Future Tense
+                3. Reduplications
+         -->
+    </category>
+
+</rules>

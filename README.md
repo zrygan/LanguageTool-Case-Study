@@ -47,7 +47,7 @@ Some grammar in the case study require context-sensitive grammars which cannot b
 
 Simply run the 
 
-## Creating your own Java Grammar Rules
+## Creating your own Java Complex Rules
 
 **First**, familiarize yourself with the LanguageTool objects. The current Javadoc of LanguageTool is [here](https://languagetool.org/development/api/overview-summary.html). The important ones are:
 
@@ -65,7 +65,7 @@ package Filipino_Language;
 
 /**
  * Sample Java rule file for https://github.com/zrygan/LanguageTool-Case-Study
- * @Author: Zhean Ganituen (Zrygan)
+ * @Author: Zhean Ganituen (zrygan)
 */
 public class NAME_OF_RULE extends Rule {
    public NAME_OF_RULE() {

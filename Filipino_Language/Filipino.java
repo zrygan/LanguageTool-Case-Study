@@ -21,7 +21,7 @@ class Filipino {
     
     // IMPORTANT:
     // Keep adding rules here if needed
-    langTool.addRule(new SampleRule());
+    langTool.addRule(new Kump_KumbRule());
 
     System.out.print("Enter text: ");
     String text = sc.nextLine().trim().replaceAll("\\s+", " ");
@@ -35,5 +35,8 @@ class Filipino {
       System.out.println("Suggested correction: " +
               match.getSuggestedReplacements());
     }
+
+    Recognizer recognizer = new Recognizer("Convensyon");
+    System.out.println(recognizer.recognizeWord());
   }
 }

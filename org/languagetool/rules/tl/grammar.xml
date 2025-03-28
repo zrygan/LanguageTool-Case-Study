@@ -570,48 +570,4 @@ See tagset.txt for the different POS, Lexical Categories, and corresponding attr
             <example correction="si Maria">Maganda <marker>Maria si</marker>.</example>
         </rule>
     </category>
-    <category name="Gitling Usage">
-        <rule id="alas_" name="use to detect a single word alas">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">((alas)|(ala))-?</token> 
-            </pattern>
-            <message>ala/s is not a root word.</message>
-        </rule>
-            <rule id="ala_gitling_invalid_hour" name="used to correct ala">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">ala-(([02-9]|([0-9][0-9])+)|(?!una)[a-zA-Z]+)</token> <!-- not 1 -->
-            </pattern>
-            <message>Use "ala" with a valid hour (1).</message>
-        </rule>
-        <rule id="alas_gitling_invalid_hour" name="use to correct hour of the day">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">alas-((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))+)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token> <!-- not 1-12 -->
-            </pattern>
-            <message>Use "alas-" with a valid hour (2-12).</message>
-        </rule>
-	    <rule id="ala_no_gitling_hour" name="use to add gitling">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">ala(1|una)</token> <!-- no gitling -->
-            </pattern>
-            <message>Add a - inbetween ala and the hour</message>
-        </rule>
-        <rule id="alas_no_gitling_hour" name="use to add gitling">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">alas([2-9]|([1][0-2])|(dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose))</token> <!-- not 1-12 -->
-            </pattern>
-            <message>Add a - inbetween alas and the hour</message>
-        </rule>
-        <rule id="ala_no_gitling_invalid_hour" name="use to add gitling">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">ala(([02-9]|([0-9][0-9])+)|(?!una)[a-rt-zA-RT-Z][a-zA-Z]+)</token> <!-- not 1-12 -->
-            </pattern>
-            <message>Add a - inbetween ala and the hour and make the hour valid</message>
-        </rule>
-        <rule id="alas_no_gitling_invalid_hour" name="use to add gitling">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">alas((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))+)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token> <!-- not 1-12 -->
-            </pattern>
-            <message>Add a - inbetween alas and the hour and make the hour valid</message>
-        </rule>
-    </category>
 </rules>
