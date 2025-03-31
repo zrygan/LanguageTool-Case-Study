@@ -272,14 +272,6 @@
             <short>Change 'o' in the 2nd part to 'u'.</short>
         </rule>
 
-        <rule id="u-o_reduplication2" name="Change 'o's to 'u'.">
-            <pattern case_sensitive="no"> 
-                <token regex="yes">(?:^|(?<=\s))([b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*)(?!\1)([b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*)(?:$|(?=\s))</token>
-            </pattern>
-            <message>Replace both 'o's with 'u' because ???. </message>
-            <short>Change 'o's in the both parts to 'u'.</short>
-        </rule>
-
     </category>
 
 </rules>
