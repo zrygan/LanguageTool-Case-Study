@@ -256,15 +256,30 @@
             <short>Change last 'u' syllable to 'o'.</short>
         </rule>
 
-
-        <rule id="object_focus" name="Change 'u' to 'o'.">
+        <rule id="verbs_object_focus" name="Change 'u' to 'o'.">
             <pattern case_sensitive="no"> 
                 <token regex="yes">\b[a-zA-Z']*u[a-zA-Z']*h?on\b(?<!\b[a-zA-Z']*o[a-zA-Z']*h?on\b)</token>
             </pattern>
             <message>Replace second-to-last suffix 'u' with 'o' because verbs at their object-focused future form may have an 'o' sound. </message>
             <short>Change second-to-last suffix 'u' with 'o'.</short>
         </rule>
-        
+
+        <rule id="u-o_reduplication1" name="Change 'o' to 'u'.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">(?:^|(?<=\s))([b-df-hj-np-tv-z']*u[b-df-hj-np-tv-z']*)(?!\1)[b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*(?:$|(?=\s))</token>
+            </pattern>
+            <message>Replace the 'o' with 'u' because the reduplicated syllable uses 'u'. </message>
+            <short>Change 'o' in the 2nd part to 'u'.</short>
+        </rule>
+
+        <rule id="u-o_reduplication2" name="Change 'o's to 'u'.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">(?:^|(?<=\s))([b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*)(?!\1)([b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*)(?:$|(?=\s))</token>
+            </pattern>
+            <message>Replace both 'o's with 'u' because ???. </message>
+            <short>Change 'o's in the both parts to 'u'.</short>
+        </rule>
+
     </category>
 
 </rules>
