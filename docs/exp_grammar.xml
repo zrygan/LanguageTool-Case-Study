@@ -255,6 +255,16 @@
             <message>Change last 'u' syllable to 'o'.</message>
             <short>Change last 'u' syllable to 'o'.</short>
         </rule>
+
+
+        <rule id="object_focus" name="Change 'u' to 'o'.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">\b[a-zA-Z']*u[a-zA-Z']*h?on\b(?<!\b[a-zA-Z']*o[a-zA-Z']*h?on\b)</token>
+            </pattern>
+            <message>Replace second-to-last suffix 'u' with 'o' because verbs at their object-focused future form may have an 'o' sound. </message>
+            <short>Change second-to-last suffix 'u' with 'o'.</short>
+        </rule>
+        
     </category>
 
 </rules>
