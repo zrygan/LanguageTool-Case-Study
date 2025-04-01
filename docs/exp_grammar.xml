@@ -33,7 +33,7 @@
     <category id="d-r_r-d" name="D-R R-D Change">
         <rule id="daw_raw" name="change daw -> raw">
             <pattern case_sensitive="no" mark_from="1">
-                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
                 <token>daw</token>
             </pattern>
             <message>Use <suggestion>\1 raw</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "raw".</message>
@@ -42,7 +42,7 @@
 
         <rule id="raw_daw" name="change raw -> daw">
             <pattern case_sensitive="no" mark_from="1">
-                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
                 <token>raw</token>
             </pattern>
             <message>Use <suggestion>\1 daw</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "daw".</message>
@@ -51,7 +51,7 @@
 
         <rule id="din_rin" name="change din -> rin">
             <pattern case_sensitive="no" mark_from="1">
-                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
                 <token>din</token>
             </pattern>
             <message>Use <suggestion>\1 rin</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "rin".</message>
@@ -60,7 +60,7 @@
 
         <rule id="rin_din" name="change rin -> din">
             <pattern case_sensitive="no" mark_from="1">
-                <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
                 <token>rin</token>
             </pattern>
             <message>Use <suggestion>\1 din</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "din".</message>
@@ -71,9 +71,9 @@
     <category id="ng_nang" name="Ng v. Nang">
         <rule id="verb_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs">
             <pattern case_sensitive="no" mark_from="1">
-                <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                <token postag="PND|BRB" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
                 <token>ng</token>
-                <token postag="AV.*|AD.*" postag_regexp="yes"/>
+                <token postag="PAB|ADB|PU|ADH" postag_regexp="yes"/>
             </pattern>
             <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
             <short>Ng to Nang before adverbs</short>
@@ -83,10 +83,10 @@
 
         <rule id="verb_pronoun_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs (with pronoun)">
             <pattern case_sensitive="no" mark_from="2">
-                <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
-                <token postag="(PANP|PNGP|PSAP|PAND|PNGD|PSAD|PFOP|PINP|PCOP|PIDP|POTH).*" postag_regexp="yes"/> <!-- this is the pronoun -->
+                <token postag="PND|BRB" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                <token postag="PHLT" postag_regexp="yes"/> <!-- this is the pronoun -->
                 <token>ng</token>
-                <token postag="AV.*|AD.*" postag_regexp="yes"/>
+                <token postag="PAB|ADB|PU|ADH" postag_regexp="yes"/>
             </pattern>
             <message>Use <suggestion>nang \4</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
             <short>Ng to Nang before adverbs (with pronoun)</short>
@@ -97,7 +97,7 @@
         <rule id="noong_to_nang" name="case 2. suggest 'noong' to 'nang'">
             <pattern case_sensitive="no">
                 <token>noong</token>
-                <token postag="VACF.*|AV.*" postag_regexp="yes"/>
+                <token postag="PND|BRB|PAB|ADB" postag_regexp="yes"/>
             </pattern>
             <message>You can optionally replace "Noong \2" with "Nang \2".</message>
             <short>Suggestion to use Nang instead of Noong</short>
@@ -106,7 +106,7 @@
         <rule id="ng_to_nang" name="case 3. change 'ng' to 'nang' if used before a conjunction">
             <pattern case_sensitive="no">
                 <token>ng</token>
-                <token postag="CO.*" postag_regexp="yes"/>
+                <token postag="PUG|KON" postag_regexp="yes"/>
             </pattern>
             <message>Use <suggestion>nang \3</suggestion>. "Nang" is used to represent the compounded "na" + "-ng" if it's before a conjunction.</message>
             <short>Replace "ng" with "nang" before conjunctions to represent the compounded "na" + "-ng".</short>
@@ -117,7 +117,7 @@
         <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' to 'para' to 'nang'">
             <pattern case_sensitive="no">
                 <token regexp="yes">upang|para</token>
-                <token postag="V.*" postag_regexp="yes"/>
+                <token postag="PND|BRB" postag_regexp="yes"/>
             </pattern>
             <message>You can optionally replace "\1 \2" with "Nang \2".</message>
             <short>Suggestion to use Nang instead of Upang or Para</short>
@@ -125,9 +125,9 @@
 
         <rule id="verb_ng_verb" name="case 5. used inbetween repeated verbs">
             <pattern case_sensitive="no">
-                <token postag="V.*" postag_regexp="yes" match="1"/>
+                <token postag="PND|BRB" postag_regexp="yes" match="1"/>
                 <token>ng</token>
-                <token postag="V.*" postag_regexp="yes" match="1"/>
+                <token postag="PND|BRB" postag_regexp="yes" match="1"/>
             </pattern>
             <message>Use <suggestion>\1 nang \3</suggestion>. "Nang" is used inbetween repeated verbs.</message>
             <short>Replace "ng" with "nang" inbetween repeated verbs.</short>
@@ -135,9 +135,9 @@
 
         <rule id="verb_nang_difverb" name="case 5. used inbetween repeated verbs (verbs dont match)">
             <pattern case_sensitive="no">
-                <token postag="V.*" postag_regexp="yes" match="1"/>
+                <token postag="PND|BRB" postag_regexp="yes" match="1"/>
                 <token>nang</token>
-                <token postag="V.*" postag_regexp="yes" match="2" negate_pos="1"/>
+                <token postag="PND|BRB" postag_regexp="yes" match="2" negate_pos="1"/>
             </pattern>
             <message>Use <suggestion>\1 nang \1</suggestion>. The verbs must be the same.</message>
             <short>Replace 3rd token verb with 1st token verb inbetween repeated verbs.</short>
@@ -145,9 +145,9 @@
 
         <rule id="noun_nang_noun" name="'ng' is used to denote possession (noun)">
             <pattern case_sensitive="no">
-                <token postag="N.*" postag_regexp="yes"/>
+                <token postag="P_PNG|C_PNG|NGR" postag_regexp="yes"/>
                 <token>nang</token>
-                <token postag="N.*" postag_regexp="yes"/>
+                <token postag="P_PNG|C_PNG|NGR" postag_regexp="yes"/>
             </pattern>
             <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote noun possession.</message>
             <short>Replace "nang" with "ng" to denote possession.</short>
@@ -155,9 +155,9 @@
 
         <rule id="verb_nang_noun" name="'ng' is used to denote possession (verb)">
             <pattern case_sensitive="no">
-                <token postag="V.*" postag_regexp="yes"/>
+                <token postag="PND|BRB" postag_regexp="yes"/>
                 <token>nang</token>
-                <token postag="N.*" postag_regexp="yes"/>
+                <token postag="P_PNG|C_PNG|NGR" postag_regexp="yes"/>
             </pattern>
             <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote verb possession.</message>
             <short>Replace "nang" with "ng" to denote possession.</short>
