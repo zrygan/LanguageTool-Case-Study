@@ -166,12 +166,6 @@
     </category>
 
     <category id="gitling" name="Gitling Usage">
-        <rule id="detect_alas_ala" name="Detect 'alas' or 'ala' without a valid hour">
-            <pattern case_sensitive="no"> 
-                <token regexp="yes">((alas)|(ala))-?</token> 
-            </pattern>
-            <message>'Alas' and 'ala' must be followed by a valid hour.</message>
-        </rule>
             <rule id="ala_invalid_hour" name="Ensure 'ala-' is followed by a valid hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">ala-(([02-9]|([0-9][0-9])+)|(?!una)[a-zA-Z]+)</token> <!-- not 1 -->
@@ -261,7 +255,7 @@
 
         <rule id="verbs_object_focus" name="Change 'u' to 'o'.">
             <pattern case_sensitive="no"> 
-                <token regex="yes">\b[a-zA-Z']*u[a-zA-Z']*h?on\b(?<!\b[a-zA-Z']*o[a-zA-Z']*h?on\b)</token>
+                <token regex="yes">\b[a-zA-Z']*u[a-zA-Z']*h?on\b(?&lt;!\b[a-zA-Z']*o[a-zA-Z']*h?on\b)</token>
             </pattern>
             <message>Replace second-to-last suffix 'u' with 'o' because verbs at their object-focused future form may have an 'o' sound. </message>
             <short>Change second-to-last suffix 'u' with 'o'.</short>
@@ -269,7 +263,7 @@
 
         <rule id="u-o_reduplication1" name="Change 'o' to 'u'.">
             <pattern case_sensitive="no"> 
-                <token regex="yes">(?:^|(?<=\s))([b-df-hj-np-tv-z']*u[b-df-hj-np-tv-z']*)(?!\1)[b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*(?:$|(?=\s))</token>
+                <token regex="yes">(?:^|(?&lt;=\s))([b-df-hj-np-tv-z']*u[b-df-hj-np-tv-z']*)(?!\1)[b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*(?:$|(?=\s))</token>
             </pattern>
             <message>Replace the 'o' with 'u' because the reduplicated syllable uses 'u'. </message>
             <short>Change 'o' in the 2nd part to 'u'.</short>

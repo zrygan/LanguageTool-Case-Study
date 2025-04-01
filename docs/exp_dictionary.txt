@@ -1,4 +1,3 @@
-takbo	takbo	C_PNG
 awit	awit	C_PNG
 sulat	sulat	C_PNG
 pagkain	pagkain	C_PNG

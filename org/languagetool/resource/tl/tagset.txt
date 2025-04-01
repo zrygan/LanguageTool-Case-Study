@@ -1,211 +1,87 @@
-NOUN:					[tag] [general categorization] [semantic class]
-
-Tag:	
-NPRO	Proper Noun
-NCOM	Common Noun
-NABB	Abbreviation
-
-General Categorization:
-1 Living Things
-2 Non-Living Things
-3 Both
-
-Semantic Class:
-A	Human
-B	Animal
-C	Plant
-D	Part
-E	Group
-F	Organization
-G	Food
-H	Item
-I	Liquid
-J	Container
-K	Instrument
-L	Transportation
-M	Clothing
-N	Place
-O	Structure
-P	Furniture
-Q	Physical Language Representation
-R	Measurement
-S	Conceptual Language Representation
-T	Conceptual idea
-U	Event
-V	Emotion
-W	Attribute
-X	Process
-Y	Time
-Z	Other
-
-
-PRONOUN:				[tag] [grammatical person] [plurality]
+PANGNGALAN:					[tag]
 
 Tag:
-PANP	“ang” Pronouns
-PNGP	“ng” Pronouns
-PSAP	“sa” Pronouns
-PAND	“ang” Demonstratives
-PNGD	“ng” Demonstratives
-PSAD	“sa” Demonstratives
-PFOP	Found Pronouns
-PINP	Interrogative Pronouns
-PCOP	Comparison Pronouns
-PIDP	Indefinite Pronouns
-POTH	Other
+P_PNG	Proper Noun
+C_PNG	Common Noun
 
-Grammatical Person:
-ST	1st person
-ND	2nd person
-RD	3rd person
-NU	Null
+PANDIWA:					[tag]
 
-Plurality:
-S	Singular
-P	Plural
-B	Both
+Tag:
+PND	Pandiwa
 
+PANG-URI:					[tag]
 
-VERB:					[focus] [aspect] [plurality]
+Tag:
+PU	Pang-uri
+
+PANG-UGNAY:					[tag]
+
+Tag:
+PUG	Pang-ugnay
+
+TAGALOG_PANGHALIP:					[tag]
+
+Tag:
+T_PH	Tagalog_Panghalip
+
+PANG-ABAY:					[tag]
+
+Tag:
+PAB	Pang-abay
+
+NGARAN:					[tag]
+
+NGR	Ngaran
+
+BERBO:					[tag] [focus]
+
+Tag: 
+BRB	Berbo
 
 Focus:
-VACF	Actor Focus
-VOBF	Object / Goal Focus
-VBEF	Benefactive Focus
-VLOF	Locative Focus
-VINF	Instrument Focus
-VOTF	Other
+O_BRB	Object
+A_BRB	Actor
 
-Aspect:
+BERBO	
 
-NE	Neutral
-CM	Completed
-IN	Incompleted
-CN	Contemplated
-RC	Recently Completed
-
-Plurality:
-P	Plural
-B	Both
-
-
-ADJECTIVE:				[tag] [plurality]
+ADHETIBO:					[tag]
 
 Tag:
-ADMO	Modifier
-ADCO	Comparative
-ADSU	Superlative
-ADNU	Numeral
-ADUN	Unaffixiated
-ADOT	Other
+ADH	Adhetibo
 
-Plurality:
-S	Singular
-P	Plural
-N	Null
-
-
-ADVERB:					[tag] [modifies]
+KONHUNSION					[tag]
 
 Tag:
-AVMA	Manner
-AVNU	Numeral
-AVDE	Definite
-AVEO	Comparison, group I
-AVET	Comparison, group II
-AVCO	Comparative, group I
-AVCT	Comparative, group II
-AVSO	Superlative, group I
-AVST	Superlative, group II
-AVSC	Slight comparison
-AVAY	Agree (Panang-ayon)
-AVGI	Disagree (Pananggi)
-AVAG	Possibility (Pang-agam)
-AVPA	Frequency (Pamanahon)
-AVOT	Other
+KON	Konhunsion
 
-Modifies:
-VE	Verb
-AD	Adjective
-AV	Adverb
-BO	Both Adjective and Adverbs
-AL	Applicable to All
-
-
-CONJUNCTION:
-CONM	Panimbang
-COMU	Pamukod
-CONU	Panubali
-CONI	Paninsay
-CONA	Pananhi
-CONP	Panapos
-CONG	Panghugnay
-COOT	Other
-
-
-PREPOSITION:
-PRPL	Place
-PRLO	Location
-PRSO	Source
-PRTA	Target
-PRRE	Referential
-PRAG	Agree
-PRDI	Disagree
-PRME	Means
-PROT	Other
-
-
-DETERMINER:				[tag] [morphological case]
+BICOL_PANGHALIP					[tag]
 
 Tag:
-DECN	Common Noun
-DEPS	Personal Name Singular
-DEPP	Singular Person Marker
-DEPL	Plural Marker
-	
-Morphological case:
-NOM	Nominative
-GEN	Genitive
-DAT	Dative
-NUL	Null
+B_PH	Bicol_Panghalip
 
+ADBERTO					[tag]
 
-INTERJECTION:
-INTR	Interjection
-IRIA	Positive Informal Response
-IRID	Negative Informal Response
-IRFA	Positive Formal Response
-IRUN	Uncertain Response
+Tag:
+ADB	Adberto
 
+NOUN					[tag]
 
-LIGATURE:
-LINA	Ligature “na”
-LIPA	Ligature “pa”
+Tag:
+P_N	Proper Noun
+C_N	Common Noun
+E_N	English Noun
+S_N Spanish Noun
 
+ADJECTIVE					[tag]
 
-INDEPENDENT PARTICLE:
-MALM	Lexical Marker
-MANE	Negation Marker
-MAVN	Verb Negation Marker
-MAEM	Existential Marker
-MANM	Non-existential Marker
-MAHM	Honorific Marker
+Tag:
+ADJ	Adjective
+E_ADJ	English Adjective
+S_ADJ	Spanish Adjective
 
+ADVERB					[tag]
 
-AUXIALLIARY WORD:
-AUXP	Auxiliary Positive
-AUXN	Auxiliary Negative
-AUPO	Auxiliary Possibility
-
-
-ENCLITIC:
-ENCL	Enclitic
-
-
-PUNCTUATION, SYMBOL, NUMBER:
-PSNP	Period
-PSNE	Exclamation Point
-PSNQ	Question Mark
-PSNC	Comma
-PSNS	Symbols
-PSNN	Numerals
+Tag:
+ADV	Adverb
+E_ADV	English Adverb
+S_ADV	Spanish Adverb
