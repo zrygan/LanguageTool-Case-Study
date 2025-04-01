@@ -14,6 +14,24 @@ This modified version includes significant changes made for a case study on Taga
 
 The case study can be viewed here [Case Study on the Filipino Language using Theory of Computation](https://github.com/zrygan/Filipino-Case-Study). 
 
+## Branches and the Versions of Language Tool
+
+This repository has three branches:
+
+- `main` which contains all experimental files and LanguageTool version 6.7-SNAPSHOT
+- `@LT.v6.7` is the same as main; but, do not use this, it is simply for history pusposes. If you want to work on version 6.7-SNAPSHOT use `main` branch instead.
+- `@LT.v6.6` LanguageTool version 6.6 (stable release). I added this since 6.7 is unstable and not working (April 1, 2024).
+
+If branch `main` or `@LT.v6.7` is not working run the command in `cmd` (in the repository):
+
+```
+git checkout @LT.v6.6
+```
+
+Then, go to that branch.
+
+| Branch `@LT.v6.7` will be removed if it is *really* not working or unstable. If this happens, then `main` will be at version 6.6 (stable).
+
 ## How To
 
 ### Requirements
