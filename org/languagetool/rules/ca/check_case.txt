@@ -25,6 +25,7 @@ el Baix Segura
 el Baix Vinalopó
 el Camp de Morvedre
 el Camp de Túria
+Camp de Túria
 la Canal de Navarrés
 #el Comtat
 #la Costera
@@ -201,6 +202,7 @@ guerra del Golf
 guerra del golf Pèrsic
 guerra civil de Somàlia
 #guerra freda
+postguerra freda
 guerra del cava
 guerra de l'aigua
 guerra de preus
@@ -363,7 +365,7 @@ diada de Sant Jordi
 dia de Sant Jordi
 Premi Nobel de la Pau
 Premi Nobel de Literatura
-Premis Nobel
+#Premis Nobel
 Premi Nobel d'Economia
 Premi Nobel de Física
 Premi Nobel de Química
@@ -496,6 +498,7 @@ Pla d'Emergència Exterior del Sector Químic de la Tordera
 Sant Pere de Ribes
 Llei orgànica d'harmonització del procés autonòmic
 avinguda Diagonal
+avinguda Meridiana
 baixada de la Glòria
 carrer Major
 carretera de Sants
@@ -1080,6 +1083,8 @@ Tribunal de Comptes de la UE
 Tribunal de Comptes de la Unió Europea
 Europa continental
 Europa central
+Europa occidental
+Europa oriental
 Consell General del Poder Judicial
 Fundació puntCAT
 Fundació .cat
@@ -1110,8 +1115,6 @@ diferències Nord-Sud
 diferències entre Orient i Occident
 Franja de Gaza
 Mars del Sud
-Europa de l'Est
-l'Oest americà
 Principat de Catalunya
 Primer Món
 Tercer Món
@@ -1152,8 +1155,6 @@ Antoni del porquet
 Antoni el Gran
 Santíssima Trinitat
 Santíssim Crist
-Patum de Berga
-la Patum de Berga
 Patum de lluïment
 Patum infantil
 Bisbal de Falset
@@ -1210,3 +1211,61 @@ Premis Ondas
 canal Esport3
 Lliçà de Vall
 Lliçà d'Amunt
+Vall d'Hebron
+diagrama de Venn
+diagrames de Venn
+Così fan futte
+zona zero
+edat de pedra
+edat del ferro
+edat del bronze
+edat del coure
+edat dels metalls
+Ciutat de Quebec
+papa Francesc
+Ciutat de Mèxic
+la ciutat de Mèxic
+Bashar al-Assad
+Hafiz al-Assad
+Al-Assad
+Hayat Tahrir al-Sham
+Tahrir al-Sham
+Pare Noel
+Pare Nadal
+Pares Noel
+Pares Nadal
+Mohammed al-Bashir
+Omar al-Bashir
+Al-Bashir
+Abu Mohammad al-Julani
+Al-Julani
+efecte Dunning-Kruger
+cap d'estudis
+caps d'estudis
+península Ibèrica
+península Itàlica
+#península Apenina
+Costa d'Ivori
+Costa Brava
+Costa Blanca
+Castelló de la Plana
+Monna Lisa
+La Gioconda
+Nova Escòcia
+República Democràtica del Congo
+La Vanguardia
+República Federal d'Alemanya
+República Democràtica Alemanya
+Pau Casals
+oceà Atlàntic
+oceà Pacífic
+oceà Índic
+oceà Àrtic
+oceà Antàrtic
+oceà Glacial Àrtic
+oceà Glacial Antàrtic
+pol nord
+pol sud
+hemisferi nord
+hemisferi sud
+península Antàrtica

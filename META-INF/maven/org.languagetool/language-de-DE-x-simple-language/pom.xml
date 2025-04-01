@@ -5,12 +5,11 @@
   <parent>
     <groupId>org.languagetool</groupId>
     <artifactId>languagetool-parent</artifactId>
-    <version>6.5</version>
+    <version>6.7-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
-  <groupId>org.languagetool</groupId>
   <artifactId>language-de-DE-x-simple-language</artifactId>
-  <version>6.5</version>
+  <version>6.7-SNAPSHOT</version>
   <name>Simple German module for LanguageTool</name>
   <description>Simple German ("Leichte Sprache") is a variant of German supposed to
         be easy to understand. There are some rules, but no formal definition or standard.

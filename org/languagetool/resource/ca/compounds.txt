@@ -14,10 +14,17 @@
 
 # All correct words should be properly tagged in the tagger dictionary or in added.txt 
 
+extra-murs+
+intra-murs+
+mestre-tites+
 quinta-columnistes+
 quinta-columnista+
 corre-focs+
 corre-foc+
+gram-positiu+
+gram-positius+
+gram-positiva+
+gram-positives+
 gram-negatiu+
 gram-negatius+
 gram-negativa+
@@ -364,7 +371,7 @@ boca-rugades*
 boca-rugat*
 boca-rugats*
 boca-sec*
-boca-seca*
+#boca-seca*
 boca-secs*
 boca-seques*
 boga-ravell*
@@ -733,7 +740,7 @@ Font-Rubí*
 Font-rubí*
 Fontenay-aux-Roses*
 Fontenay-le-Comte*
-fora-d'hores*
+#fora-d'hores*
 Forlì-Cesena*
 Fort-de-France*
 Fort-de-l'Eau*

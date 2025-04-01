@@ -1,6 +1,7 @@
 # adaptacions
 #gay=gai
 #gays=gais
+managerial=administratiu|directiu|administrativa|directiva
 event=esdeveniment|acte
 events=esdeveniments|actes|actes diversos|grans actes
 enforcement=execució|compliment|aplicació|compliment forçós
@@ -478,3 +479,5 @@ highlights=millors moments|millors jugades
 conference call=teleconferència|multiconferència
 free rider=polissó|paràsit|gorrista|aprofitat
 free riders=polissons|paràsits|gorristes|aprofitats
+legacy media=mitjans convencionals|mitjans tradicionals|mitjans de comunicació convencionals|mitjans de comunicació tradicionals
+peer-to-peer=d'igual a igual

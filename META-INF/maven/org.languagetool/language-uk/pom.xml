@@ -5,12 +5,11 @@
   <parent>
     <groupId>org.languagetool</groupId>
     <artifactId>languagetool-parent</artifactId>
-    <version>6.5</version>
+    <version>6.7-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
-  <groupId>org.languagetool</groupId>
   <artifactId>language-uk</artifactId>
-  <version>6.5</version>
+  <version>6.7-SNAPSHOT</version>
   <name>Ukrainian module for LanguageTool</name>
   <url>https://www.languagetool.org</url>
   <licenses>
@@ -48,7 +47,7 @@
     </developer>
   </developers>
   <properties>
-    <morfologik-ukrainian-lt.version>6.5.2</morfologik-ukrainian-lt.version>
+    <morfologik-ukrainian-lt.version>6.6.0</morfologik-ukrainian-lt.version>
   </properties>
   <dependencies>
     <dependency>

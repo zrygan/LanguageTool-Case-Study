@@ -2,6 +2,8 @@
 
 By Zhean Ganituen, Stephen Borja, & Justin Ching
 
+This repository currently uses the **most recent** (as of April 1, 2025) of LanguageTool, which is version 6.7.
+
 This repository contains a modified version of LanguageTool, originally licensed under the GNU Lesser General Public License (LGPL) version 2.1.
 
 The original LanguageTool project [LanguageTool GitHub Repository](https://github.com/languagetool-org/languagetool) and the license can be found in `LanguageTool_COPYING.txt`.

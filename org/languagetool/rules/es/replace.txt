@@ -227,3 +227,13 @@ gustaria=gustaría
 # Errors in the dictionary 
 # (can be removed after updating the dictionary)
 #################################################
+quórum=cuórum|quorum
+quórums=cuórums|quorums
+chiís=chiíes
+chiíta=chiita
+chiítas=chiitas
+bricolage=bricolaje
+bricolages=bricolajes
+garage=garaje
+garages=garajes
+Kinshasa=Kinsasa

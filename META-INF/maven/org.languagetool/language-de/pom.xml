@@ -5,12 +5,11 @@
   <parent>
     <groupId>org.languagetool</groupId>
     <artifactId>languagetool-parent</artifactId>
-    <version>6.5</version>
+    <version>6.7-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
-  <groupId>org.languagetool</groupId>
   <artifactId>language-de</artifactId>
-  <version>6.5</version>
+  <version>6.7-SNAPSHOT</version>
   <name>German module for LanguageTool</name>
   <url>https://www.languagetool.org</url>
   <licenses>
@@ -67,6 +66,11 @@
     <dependency>
       <groupId>org.languagetool</groupId>
       <artifactId>languagetool-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

@@ -5,12 +5,11 @@
   <parent>
     <groupId>org.languagetool</groupId>
     <artifactId>languagetool-parent</artifactId>
-    <version>6.5</version>
+    <version>6.7-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
-  <groupId>org.languagetool</groupId>
   <artifactId>language-nl</artifactId>
-  <version>6.5</version>
+  <version>6.7-SNAPSHOT</version>
   <name>Dutch module for LanguageTool</name>
   <url>https://www.languagetool.org</url>
   <licenses>

@@ -1,4 +1,26 @@
 #separatorRegExp=[\t;]
+Yevgueni Mravinski;NPMSSP0
+Nouveau Roman;NPMSO00
+mar de Ross;NPMSG00
+Arco de La Défense;NPMSG00
+bonus-malus;AQ0CN0
+Monte McKinley;NPMSG00
+tech bro;NCMS000
+tech bros;NCMP000
+Mohammed bin Salmán;NPMSSP0
+tutti frutti;NCMS000
+tutti fruttis;NCMP000
+full contact;NCMS000
+Notre Dame;NPCSG00
+Euskal Telebista;NPFSO00
+Alexandr Bórtnikov;NPMSSP0
+Ongi Etorri;NPMSO00
+Saint-Vincent;NPMSG00
+Saint Vincent;NPMSG00
+San Vicente y las Granadinas;NPMSG00
+Così fan futte;NPCSO00
+El Mikado;NPMSO00
+Antioquía de Pisidia;NPFSG00
 free rider;NCCS000
 free riders;NCCP000
 Hasan Nasrallah;NPMSSP0
@@ -458,6 +480,7 @@ Jesús Ángel;NPMSSP0
 Juan Ángel;NPMSSP0
 Andréi Kolmogórov;NPMSSP0
 Bashar al-Ásad;NPMSSP0
+Háfez al-Ásad;NPMSSP0
 Freie Wähler;NPMPO00
 Die Linke;NPFSO00
 fondo buitre;NPMS000
@@ -1160,6 +1183,7 @@ in rerum natura;LOC_ADV
 in retentis;LOC_ADV
 in saecula;LOC_ADV
 in saecula saeculorum;LOC_ADV
+per saecula saeculorum;LOC_ADV
 in saeculum saeculi;LOC_ADV
 in saeculo;LOC_ADV
 in salvo;LOC_ADV
@@ -8743,7 +8767,6 @@ in mente	LOC_ADV
 in nuce	LOC_ADV
 in perpetuum	LOC_ADV
 in primis	LOC_ADV
-in saecula saeculorum	LOC_ADV
 in scriptis	LOC_ADV
 in statu quo	LOC_ADV
 in terminis	LOC_ADV
@@ -8889,6 +8912,7 @@ osos panda	NCMP000
 AA. VV.	NCMP000
 VV. AA.	NCMP000
 CC. AA.	NCFP000
+C. A.	NCFS000
 Western Electric	NPFSO00
 Western Union	NPFSO00
 Pink Floyd	NPMNO00
@@ -9027,6 +9051,7 @@ Drag Queens	NCFP000
 Drag King	NCMS000
 Drag Kings	NCMP000
 Mona Lisa	NPFSSP0
+Monna Lisa	NPFSSP0
 al dente	LOC_ADJ
 después de Cristo	LOC_ADV
 antes de Cristo	LOC_ADV
@@ -9990,7 +10015,6 @@ Buenos Aires	NPCSG00
 Burkina Faso	NPCSG00
 bóbilis bóbilis	LOC_ADV
 c.	Y
-C. A.	Y
 c. c.	Y
 C. C.	Y
 c. e.	Y
