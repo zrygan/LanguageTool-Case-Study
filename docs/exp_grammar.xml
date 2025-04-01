@@ -1,6 +1,10 @@
-<?xml version="2.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.css" title="Easy editing stylesheet" ?>
+
+<!-- <?xml version="2.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../print.xsl" ?>
-<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?>
+<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?> -->
 
 <!--    Tagalog and Bicolano Language Grammar
         By Stephen Borja, Justin Ching, and Zhean Ganituen (2025)
@@ -26,7 +30,7 @@
  -->
 
 <rules>
-    <category name="D-R R-D Change">
+    <category id="d-r_r-d" name="D-R R-D Change">
         <rule id="daw_raw" name="change daw -> raw">
             <pattern case_sensitive="no" mark_from="1">
                 <token postag="N.*|AD.*|V.*|AV.*" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
@@ -64,7 +68,7 @@
         </rule>
     </category>
 
-    <category name="Ng v. Nang">
+    <category id="ng_nang" name="Ng v. Nang">
         <rule id="verb_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs">
             <pattern case_sensitive="no" mark_from="1">
                 <token postag="VACF.*" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
@@ -73,8 +77,8 @@
             </pattern>
             <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
             <short>Ng to Nang before adverbs</short>
-            <!-- <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example> -->
-		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
+            <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example>
+		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
         </rule>
 
         <rule id="verb_pronoun_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs (with pronoun)">
@@ -86,8 +90,8 @@
             </pattern>
             <message>Use <suggestion>nang \4</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
             <short>Ng to Nang before adverbs (with pronoun)</short>
-            <!-- <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example> -->
-		    <!-- <example type="correct">Kumain <marker>nang mabagal</marker>.</example> -->
+            <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example>
+		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
         </rule>
 
         <rule id="noong_to_nang" name="case 2. suggest 'noong' to 'nang'">
@@ -106,8 +110,8 @@
             </pattern>
             <message>Use <suggestion>nang \3</suggestion>. "Nang" is used to represent the compounded "na" + "-ng" if it's before a conjunction.</message>
             <short>Replace "ng" with "nang" before conjunctions to represent the compounded "na" + "-ng".</short>
-            <!-- <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example> -->
-		    <!-- <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example> -->
+            <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example>
+		    <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example>
         </rule>
 
         <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' to 'para' to 'nang'">
@@ -161,7 +165,7 @@
 
     </category>
 
-    <category name="Gitling Usage">
+    <category id="gitling" name="Gitling Usage">
         <rule id="alas_" name="use to detect a single word alas">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">((alas)|(ala))-?</token> 
@@ -208,16 +212,66 @@
 
     <!-- Bikolano Section -->
 
-    <category name ="Object-Focused Future Tense">
+    <category id="bikolano_object_tense" name ="Object-Focused Future Tense">
+        <rule id="on_to_hon" name="'hon' is used if root word ends with a vowel.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">.∗[aeiou]on</token>
+            </pattern>
+            <message>End the word with "hon" instead of "on" because the root word ends with a vowel.</message>
+            <short>Replace "hon" with "on" if word ends with a vowel.</short>
+        </rule>
 
+        <rule id="hon_to_on" name="'on' is used if root word ends with a consonant.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">.∗[^aeiou]hon</token>
+            </pattern>
+            <message>End the word with "on" instead of "hon" because the root word ends with a consonant.</message>
+            <short>Replace "on" with "hon" if word ends with a consonant.</short>
+        </rule>
+        
     </category>
 
-    <category name ="U-O Distribution">
-        <!-- cases:
-                1. basic case
-                2. Object-Focused Future Tense
-                3. Reduplications
-         -->
+    <category id="u-o_distribution" name ="U-O Distribution">
+        <rule id="simple_case1" name="Detect incorrect 'u' and 'o' usage">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">\b([^aeiou]?[aeio][^aeiou])+([^aeiou]?[aeiu][^aeiou]?)\b</token>
+            </pattern>
+            <message>'o' must be 'u' if it is not the last syllable; 'u' must be 'o' if it is the last syllable.</message>
+            <short>'o' must be 'u' if it is not the last syllable; 'u' must be 'o' if it is the last syllable.</short>
+        </rule>
+
+        <rule id="simple_case2" name="Change every 'o' except the last 'o' syllable to 'u'.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">\b[^aeiou]*o([^aeiou]*o)+[^aeiou]*\b</token>
+            </pattern>
+            <message>Change every 'o' except the last 'o' syllable to 'u'.</message>
+            <short>Change every 'o' except the last 'o' syllable to 'u'.</short>
+        </rule>
+
+        <rule id="simple_case3" name="Change last 'u' syllable to 'o'.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">\b[^aeiou]*u([^aeiou]*u)+[^aeiou]*\b</token>
+            </pattern>
+            <message>Change last 'u' syllable to 'o'.</message>
+            <short>Change last 'u' syllable to 'o'.</short>
+        </rule>
+
+        <rule id="verbs_object_focus" name="Change 'u' to 'o'.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">\b[a-zA-Z']*u[a-zA-Z']*h?on\b(?<!\b[a-zA-Z']*o[a-zA-Z']*h?on\b)</token>
+            </pattern>
+            <message>Replace second-to-last suffix 'u' with 'o' because verbs at their object-focused future form may have an 'o' sound. </message>
+            <short>Change second-to-last suffix 'u' with 'o'.</short>
+        </rule>
+
+        <rule id="u-o_reduplication1" name="Change 'o' to 'u'.">
+            <pattern case_sensitive="no"> 
+                <token regex="yes">(?:^|(?<=\s))([b-df-hj-np-tv-z']*u[b-df-hj-np-tv-z']*)(?!\1)[b-df-hj-np-tv-z']*o[b-df-hj-np-tv-z']*(?:$|(?=\s))</token>
+            </pattern>
+            <message>Replace the 'o' with 'u' because the reduplicated syllable uses 'u'. </message>
+            <short>Change 'o' in the 2nd part to 'u'.</short>
+        </rule>
+
     </category>
 
 </rules>
