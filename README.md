@@ -22,8 +22,6 @@ This repository has three branches:
 - `@LT.v6.7` is the same as main; but, do not use this, it is simply for history pusposes. If you want to work on version 6.7-SNAPSHOT use `main` branch instead.
 - `@LT.v6.6` LanguageTool version 6.6 (stable release). I added this since 6.7 is unstable and not working (April 1, 2024).
 
-### 
-
 If branch `main` or `@LT.v6.7` is not working run the command in `cmd` (in the repository):
 
 ```
