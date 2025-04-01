@@ -166,47 +166,50 @@
     </category>
 
     <category id="gitling" name="Gitling Usage">
-        <rule id="alas_" name="use to detect a single word alas">
+        <rule id="detect_alas_ala" name="Detect 'alas' or 'ala' without a valid hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">((alas)|(ala))-?</token> 
             </pattern>
-            <message>ala/s is not a root word.</message>
+            <message>'Alas' and 'ala' must be followed by a valid hour.</message>
         </rule>
-            <rule id="ala_gitling_invalid_hour" name="used to correct ala">
+            <rule id="ala_invalid_hour" name="Ensure 'ala-' is followed by a valid hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">ala-(([02-9]|([0-9][0-9])+)|(?!una)[a-zA-Z]+)</token> <!-- not 1 -->
             </pattern>
-            <message>Use "ala" with a valid hour (1).</message>
+            <message>'Ala-' must be followed by '1' or 'una'.</message>
         </rule>
-        <rule id="alas_gitling_invalid_hour" name="use to correct hour of the day">
+        <rule id="alas_invalid_hour" name="Ensure 'alas-' is followed by a valid hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">alas-((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))+)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token> <!-- not 1-12 -->
             </pattern>
-            <message>Use "alas-" with a valid hour (2-12).</message>
+            <message>'Alas-' must be followed by a valid hour (2-12 or dos-dose).</message>
         </rule>
-	    <rule id="ala_no_gitling_hour" name="use to add gitling">
+	     <rule id="ala_missing_dash" name="Ensure 'ala' has a gitling with the hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">ala(1|una)</token> <!-- no gitling -->
             </pattern>
-            <message>Add a - inbetween ala and the hour</message>
+            <message>Add a hyphen between 'ala' and the hour (ala-1 or ala-una).</message>
         </rule>
-        <rule id="alas_no_gitling_hour" name="use to add gitling">
+
+        <rule id="alas_missing_dash" name="Ensure 'alas' has a gitling with the hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">alas([2-9]|([1][0-2])|(dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose))</token> <!-- not 1-12 -->
             </pattern>
-            <message>Add a - inbetween alas and the hour</message>
+            <message>Add a hyphen between 'alas' and the hour (e.g., alas-2, alas-dos).</message>
         </rule>
-        <rule id="ala_no_gitling_invalid_hour" name="use to add gitling">
+
+        <rule id="ala_invalid_no_dash" name="Ensure 'ala' has a hyphen and valid hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">ala(([02-9]|([0-9][0-9])+)|(?!una)[a-rt-zA-RT-Z][a-zA-Z]+)</token> <!-- not 1-12 -->
             </pattern>
-            <message>Add a - inbetween ala and the hour and make the hour valid</message>
+            <message>'Ala' must be followed by a hyphen and a valid hour (1 or una).</message>
         </rule>
-        <rule id="alas_no_gitling_invalid_hour" name="use to add gitling">
+
+        <rule id="alas_invalid_no_dash" name="Ensure 'alas' has a hyphen and valid hour">
             <pattern case_sensitive="no"> 
                 <token regexp="yes">alas((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))+)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token> <!-- not 1-12 -->
             </pattern>
-            <message>Add a - inbetween alas and the hour and make the hour valid</message>
+            <message>'Alas' must be followed by a hyphen and a valid hour (2-12 or dos-dose).</message>
         </rule>
     </category>
 
