@@ -83,9 +83,7 @@ IVAJ
 Igualada
 Intxaurrondo
 Iona
-Itziar
 Joker
-Julen
 Karamàzov
 Karnataka
 Kinder
@@ -148,7 +146,6 @@ Szczęsny
 Tanglewood
 Tesla
 Thiel
-Thimphu
 Tippett
 Tolbàtxik
 Trudeau
@@ -823,7 +820,6 @@ germano-rus
 germano-russa
 germano-russes
 germano-russos
-gerrymandering
 girardiana
 girardianes
 girardians
