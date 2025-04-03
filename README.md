@@ -184,4 +184,4 @@ class Filipino {
 
 ## Creating and Using the Resulting Extension File
 
-Go to [extension directory]() for details.
+Go to [extension directory](https://github.com/zrygan/LanguageTool-Case-Study/tree/%40LT.v6.6/extension) for details.
