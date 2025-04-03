@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.css" title="Easy editing stylesheet" ?>
+
+<!-- <?xml version="2.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../print.xsl" ?>
+<?xml-stylesheet type="text/css" href="../rules.css" title="Easy editing stylesheet" ?> -->
+
+<!--    Tagalog and Bicolano Language Grammar
+        By Stephen Borja, Justin Ching, and Zhean Ganituen (2025)
+
+        This is a modified grammar file, and not the original grammar file in 
+        LanguageTool which is by Nathaniel Oco and Allan Borra (2011).
+        This is a modified version of the original grammar.xml file 
+        that was created by the original developers of the project. 
+        
+        This library is free software; you can redistribute it and/or
+        modify it under the terms of the GNU Lesser General Public
+        License as published by the Free Software Foundation; either
+        version 2.1 of the License, or (at your option) any later version.
+
+        This library is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+        Lesser General Public License for more details.
+
+        You should have received a copy of the GNU Lesser General Public
+        License along with this library; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA 
+ -->
+
+<rules>
+    <category id="d-r_r-d" name="D-R R-D Change">
+        <rule id="daw_raw" name="change daw -> raw">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
+                <token>daw</token>
+            </pattern>
+            <message>Use <suggestion>\1 raw</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "raw".</message>
+            <short>Daw to raw if word ends in a vowel</short>
+        </rule>
+
+        <rule id="raw_daw" name="change raw -> daw">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+                <token>raw</token>
+            </pattern>
+            <message>Use <suggestion>\1 daw</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "daw".</message>
+            <short>Raw to daw if word ends in a consonant</short>
+        </rule>
+
+        <rule id="din_rin" name="change din -> rin">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[aeiou]</token>
+                <token>din</token>
+            </pattern>
+            <message>Use <suggestion>\1 rin</suggestion>; if the noun, adjective, verb, or adverb ends in a vowel, you have to use "rin".</message>
+            <short>Din to rin if word ends in a vowel</short>
+        </rule>
+
+        <rule id="rin_din" name="change rin -> din">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="P_PNG|C_PNG|NGR|PU|ADH|PND|BRB|PAB|ADB" postag_regexp="yes" regexp="yes">[A-Z][a-z]*[^aeiou]</token>
+                <token>rin</token>
+            </pattern>
+            <message>Use <suggestion>\1 din</suggestion>; if the noun, adjective, verb, or adverb ends in a consonant, you have to use "din".</message>
+            <short>Rin to din if word ends in a consonant</short>
+        </rule>
+    </category>
+
+    <category id="ng_nang" name="Ng v. Nang">
+        <rule id="verb_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs">
+            <pattern case_sensitive="no" mark_from="1">
+                <token postag="PND|BRB" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                <token>ng</token>
+                <token postag="PAB|ADB|PU|ADH" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>nang \3</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
+            <short>Ng to Nang before adverbs</short>
+            <example correction="nang mabagal" type="incorrect">Kumain <marker>ng mabagal</marker>.</example>
+		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
+        </rule>
+
+        <rule id="verb_pronoun_ng_adverb" name="case 1. turn 'ng' to 'nang' before adverbs (with pronoun)">
+            <pattern case_sensitive="no" mark_from="2">
+                <token postag="PND|BRB" postag_regexp="yes"/> <!-- postag_regexp="yes" means to treat postag as a regex -->
+                <token postag="PH" postag_regexp="yes"/> <!-- this is the pronoun -->
+                <token>ng</token>
+                <token postag="PAB|ADB|PU|ADH" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>nang \4</suggestion>; you're not supposed to use "ng" when connecting verbs to adverbs.</message>
+            <short>Ng to Nang before adverbs (with pronoun)</short>
+            <example correction="nang mabagal" type="incorrect">Kumain siya <marker>ng mabagal</marker>.</example>
+		    <example type="correct">Kumain <marker>nang mabagal</marker>.</example>
+        </rule>
+
+        <rule id="noong_to_nang" name="case 2. suggest 'noong' to 'nang'">
+            <pattern case_sensitive="no">
+                <token>noong</token>
+                <token postag="PND|BRB|PAB|ADB" postag_regexp="yes"/>
+            </pattern>
+            <message>You can optionally replace "Noong \2" with "Nang \2".</message>
+            <short>Suggestion to use Nang instead of Noong</short>
+        </rule>
+
+        <rule id="ng_to_nang" name="case 3. change 'ng' to 'nang' if used before a conjunction">
+            <pattern case_sensitive="no">
+                <token>ng</token>
+                <token postag="PUG|KON" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>nang \3</suggestion>. "Nang" is used to represent the compounded "na" + "-ng" if it's before a conjunction.</message>
+            <short>Replace "ng" with "nang" before conjunctions to represent the compounded "na" + "-ng".</short>
+            <example correction="na ng dahil" type="incorrect">Ang mamatay <marker>na ng dahil</marker> sa iyo.</example>
+		    <example type="correct">Ang mamatay <marker>nang dahil</marker> sa iyo..</example>
+        </rule>
+
+        <rule id="upang_or_para_to_nang" name="case 4. suggest 'upang' or 'para' to 'nang'">
+            <pattern case_sensitive="no">
+                <token regexp="yes">upang|para</token>
+                <token postag="PND|BRB" postag_regexp="yes"/>
+            </pattern>
+            <message>You can optionally replace "\1 \2" with "nang \2".</message>
+            <short>Suggestion to use Nang instead of Upang or Para</short>
+        </rule>
+
+        <rule id="verb_ng_verb" name="case 5. used inbetween repeated verbs">
+            <pattern case_sensitive="no">
+                <token postag="PND|BRB" postag_regexp="yes" match="1"/>
+                <token>ng</token>
+                <token postag="PND|BRB" postag_regexp="yes" match="1"/>
+            </pattern>
+            <message>Use <suggestion>\1 nang \3</suggestion>. "Nang" is used inbetween repeated verbs.</message>
+            <short>Replace "ng" with "nang" inbetween repeated verbs.</short>
+        </rule>
+
+        <rule id="noun_nang_noun" name="'ng' is used to denote possession (noun)">
+            <pattern case_sensitive="no">
+                <token postag="P_PNG|C_PNG|NGR" postag_regexp="yes"/>
+                <token>nang</token>
+                <token postag="P_PNG|C_PNG|NGR" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote noun possession.</message>
+            <short>Replace "nang" with "ng" to denote possession.</short>
+        </rule>
+
+        <rule id="verb_nang_noun" name="'ng' is used to denote possession (verb)">
+            <pattern case_sensitive="no">
+                <token postag="PND|BRB" postag_regexp="yes"/>
+                <token>nang</token>
+                <token postag="P_PNG|C_PNG|NGR" postag_regexp="yes"/>
+            </pattern>
+            <message>Use <suggestion>\1 ng \3</suggestion>. "Ng" is used to denote verb possession.</message>
+            <short>Replace "nang" with "ng" to denote possession.</short>
+        </rule>
+
+    </category>
+
+    <category id="gitling" name="Gitling Usage">
+        <rule id="GENERALIZED_NO_SPACE_BETWEEN" name="Ensure no space between 'di' and the hyphen">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token regexp="yes">di|ala|alas|taga|maka|pa|ka|maki|ipa</token>
+                    <token regexp="yes">[-]</token>
+                    <token spacebefore="yes" regexp="yes">[a-zA-Z0-9]+</token>
+                </marker>
+            </pattern>
+            <message>No spaces should be present in <match no="1"/> compounds.</message>
+        </rule>
+
+        <rule id="GENERALIZED_NO_SPACE_BEFORE_GITLING" name="Ensure no space before the hyphen in 'di-' compounds">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token regexp="yes">di|ala|alas|taga|maka|pa|ka|maki|ipa</token>
+                    <token spacebefore="yes">-</token>
+                    <token regexp="yes">[a-zA-Z0-9]+</token>
+                </marker>
+            </pattern>
+            <message>No spaces should be present in <match no="1"/> compounds.</message>
+        </rule>
+
+		<!-- ala or alas-->
+        <rule id="ala_invalid_hour" name="Ensure 'ala-' is followed by a valid hour">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">ala</token>
+                <token>-</token>
+                <token regexp="yes">(([02-9]|([0-9][0-9])+)|(?!una)[a-zA-Z]+)</token>
+            </pattern>
+            <message>'Ala-' must be followed by '1' or 'una'.</message>
+        </rule>
+
+        <rule id="alas_invalid_hour" name="Ensure 'alas-' is followed by a valid hour">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">alas</token> <!-- not 1-12 -->
+                <token>-</token>
+                <token regexp="yes">((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))*)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token>
+            </pattern>
+            <message>'Alas-' must be followed by a valid hour (2-12 or dos-dose).</message>
+        </rule>
+
+	     <rule id="ala_no_dash" name="Ensure 'ala' has a gitling with the hour">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">ala</token> <!-- no gitling -->
+                <token regexp="yes">(1|una)</token>
+            </pattern>
+            <message>Add a hyphen between 'ala' and the hour (ala-1 or ala-una).</message>
+        </rule>
+
+        <rule id="alas_no_dash" name="Ensure 'alas' has a gitling with the hour">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">alas</token> <!-- not 1-12 -->
+                <token regexp="yes">([2-9]|([1][0-2])|(dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose))</token> <!-- not 1-12 -->
+            </pattern>
+            <message>Add a hyphen between 'alas' and the hour (e.g., alas-2, alas-dos).</message>
+        </rule>
+        
+        <rule id="ala_invalid_no_dash" name="Ensure 'ala' has a hyphen and valid hour">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">ala</token> <!-- not 1-12 -->
+                <token regexp="yes">(([02-9]|([0-9][0-9])+)|(?!una)[a-rt-zA-RT-Z][a-zA-Z]+)</token>
+            </pattern>
+            <message>'Ala' must be followed by a hyphen and a valid hour (1 or una).</message>
+        </rule>
+
+        <rule id="alas_invalid_no_dash" name="Ensure 'alas' has a hyphen and valid hour">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">alas</token> <!-- not 1-12 -->
+                <token regexp="yes">((([01]|([1][^0-2])|([2-9]+[0-9]+)|([0]+[0-9]+))+)|(?!dos|tres|kwatro|singko|sais|syete|otso|nwebe|dyes|onse|dose)[a-zA-Z]+)</token> <!-- not 1-12 -->
+            </pattern>
+            <message>'Alas' must be followed by a hyphen and a valid hour (2-12 or dos-dose).</message>
+        </rule>
+
+	    <!--'Di'-->
+	    <rule id="DI_NO_DASH" name="Ensure 'di' has a dash inbetween itself and the following word">
+		    <pattern case_sensitive="no">
+		    <token regexp="yes">\bdi(?!to|tong|yan|yang|ko|mo|ni|namin|natin|nyo|nila|ddy|ba|pa|man|na|raw|rin|po|ho|lang)[a-zA-z]+\b</token>
+		    </pattern>
+		    <message>"Di" should be written with a hyphen when forming a compound word.</message>
+	    </rule>
+
+        <rule id="DI_SPACE" name="Ensure 'di' is followed by adjective or common noun">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token>di</token>
+                    <token spacebefore="yes" postag="P_PNG|C_PNG|S_N|E_N|J_N|K_N|F_N|BN|PND|E_V|BRB|PU|PAB|PH|PUG" postag_regexp="yes"/>
+                </marker>
+            </pattern>
+            <message>"Di" should be written with a hyphen when forming a compound word.</message>
+        </rule>
+
+        <rule id="DI_INVALID_WORD" name="Ensure 'di' is followed by adjective or common noun">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token>di</token>
+                    <token>-</token>
+                    <token postag="P_PNG|S_N|E_N|J_N|K_N|F_N|BN|PND|E_V|BRB|PAB|PH|PUG" postag_regexp="yes"/>
+                </marker>
+            </pattern>
+            <message>'Di-' should only be followed by an adjective or common noun, not '<match no="3"/>'</message>
+        </rule>
+
+        <rule id="DI_UPPERCASED" name="Ensure the following word is not uppercased">
+            <pattern case_sensitive="yes">
+                <token>di</token>
+                <token>-</token>
+                <token regexp="yes">[A-Z][a-zA-Z0-9]*</token>
+            </pattern>
+                <message>The word '<match no="3"/>' after di- must not be capitalized</message>
+        </rule>
+
+        <!--Proper Nouns-->
+        <rule id="PN_SPACE" name="Ensure the syllable has a dash inbetween itself and the following word">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token regexp="yes">(taga|maka|ka)</token>
+                    <token spacebefore="yes" postag="P_PNG|C_PNG|S_N|E_N|J_N|K_N|F_N|BN|PND|E_V|BRB|PU|PAB|PH|PUG" postag_regexp="yes"/>
+                </marker>
+            </pattern>
+            <message>The syllable '<match no="1"/>' should be connected to '<match no="2"/>' with a hyphen.</message>
+        </rule>
+        
+        <rule id="PN_INVALID_WORD" name="Ensure prefix is followed by proper noun">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token regexp="yes">(taga|maka|ka)</token>
+                    <token>-</token>
+                    <token postag="C_PNG|PU|PND|PAB|PUG|T_PH|B_PH|BRB|ADH|KON|ADJ|ADV" postag_regexp="yes"/>
+                </marker>
+            </pattern>
+            <message>The prefix '<match no="1"/>' should be followed by a proper noun, not '<match no="3"/>'</message>
+        </rule>
+
+        <rule id="PN_LOWERCASED" name="Ensure the following word is not uppercased">
+            <pattern case_sensitive="yes">
+                <token regexp="yes">(taga|maka|ka)</token>
+                <token>-</token>
+                <token regexp="yes">[a-z][a-zA-Z0-9]*</token>
+            </pattern>
+                <message>The word '<match no="3"/>' after - must be capitalized.</message>
+        </rule>  
+
+        <!--Foreign Words-->
+        <rule id="FW_SPACE" name="Ensure the syllable has a dash inbetween itself and the following word">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token regexp="yes">(pa|maki|ipa)</token>
+                    <token spacebefore="yes" postag="P_PNG|C_PNG|S_N|E_N|J_N|K_N|F_N|BN|PND|E_V|BRB|PU|PAB|PH|PUG" postag_regexp="yes"/>
+                </marker>
+            </pattern>
+
+            <message>The syllable '<match no="1"/>' should be connected to '<match no="2"/>' with a hyphen.</message>
+        </rule>
+        
+        <rule id="FW_INVALID_WORD" name="Ensure prefix is followed by foreign word">
+            <pattern case_sensitive="no">
+                <marker>
+                    <token regexp="yes">(pa|maki|ipa)</token>
+                    <token>-</token>
+                    <token postag="P_PNG|C_PNG|S_N|E_N|J_N|K_N|F_N|BN|PND|E_V|BRB|PU|PAB|PH|PUG" postag_regexp="yes"/>
+                </marker>
+            </pattern>
+            <message>The prefix '<match no="1"/>' should be followed by a foreign word, not '<match no="3"/>'</message>
+        </rule>
+
+        <rule id="FW_UPPERCASED" name="Ensure foreign words are lowercased after prefix">
+            <pattern case_sensitive="yes">
+                <marker>
+                    <token regexp="yes">(pa|maki|ipa)</token>
+                    <token>-</token>
+                    <token regexp="yes">[A-Z](?!pop)[a-zA-Z0-9]+</token>
+                </marker>
+            </pattern>
+            <message>The word '<match no="3"/>' after <match no="1"/>- must not be capitalized</message>
+        </rule>
+
+        <rule id="FW_KPOP" name="To catch K-pop">
+            <pattern case_sensitive="no">
+                <token regexp="yes">(pa|maki|ipa)</token>
+                <token>-</token>
+                <token>K</token>
+                <token>-</token>
+                <token>pop</token>
+            </pattern>
+            <message>The word K-pop, its gitling must be removed, it should be <match no="1"/><match no="2"/>Kpop </message>
+        </rule>
+    </category>
+
+    <!-- Bikolano Section -->
+
+    <category id="u-o_distribution" name ="U-O Distribution">
+
+        <rule id="simple_case1" name="Detect incorrect 'u' and 'o' usage">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">([^aeiou]?[aeio][^aeiou])+([^aeiou]?[aeiu][^aeiou]?)</token>
+            </pattern>
+            <message>'o' must be 'u' if it is not the last syllable; 'u' must be 'o' if it is the last syllable.</message>
+            <short>'o' must be 'u' if it is not the last syllable; 'u' must be 'o' if it is the last syllable.</short>
+        </rule>
+
+        <rule id="simple_case2" name="Change every 'o' except the last 'o' syllable to 'u'.">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">[^aeiou]*o([^aeiou]*o)+[^aeiou]*</token>
+            </pattern>
+            <message>Change every 'o' except the last 'o' syllable to 'u'.</message>
+            <short>Change every 'o' except the last 'o' syllable to 'u'.</short>
+        </rule>
+
+        <rule id="simple_case3" name="Change last 'u' syllable to 'o'.">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">[^aeiou]*u([^aeiou]*u)+[^aeiou]*</token>
+            </pattern>
+            <message>Change last 'u' syllable to 'o'.</message>
+            <short>Change last 'u' syllable to 'o'.</short>
+        </rule>
+
+        <rule id="simple_case1_apo" name="Detect incorrect 'u' and 'o' usage. (with apostrophe)">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">([^aeiou]?[aeio][^aeiou])+</token>
+                <token regexp="yes">'</token>
+                <token regexp="yes">([^aeiou]?[aeiu][^aeiou]?)</token>
+            </pattern>
+            <message>'o' must be 'u' if it is not the last syllable; 'u' must be 'o' if it is the last syllable.</message>
+            <short>'o' must be 'u' if it is not the last syllable; 'u' must be 'o' if it is the last syllable.</short>
+        </rule>
+
+        <rule id="simple_case2_apo" name="Change every 'o' except the last 'o' syllable to 'u'. (with apostrophe)">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">[^aeiou]*o</token>
+                <token regexp="yes">'</token>
+                <token regexp="yes">([^aeiou]*o)+[^aeiou]*</token>
+            </pattern>
+            <message>Change every 'o' except the last 'o' syllable to 'u'.</message>
+            <short>Change every 'o' except the last 'o' syllable to 'u'.</short>
+        </rule>
+
+        <rule id="simple_case3_apo" name="Change last 'u' syllable to 'o'. (with apostrophe)">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">[^aeiou]*u</token>
+                <token regexp="yes">'</token>
+                <token regexp="yes">([^aeiou]*u)+[^aeiou]*</token>
+            </pattern>
+            <message>Change last 'u' syllable to 'o'.</message>
+            <short>Change last 'u' syllable to 'o'.</short>
+        </rule>
+
+        <rule id="verbs_object_focus" name="Change 'u' to 'o'.">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">[a-zA-Z']*u[^o]*on</token>
+                <exception scope="previous" regexp="yes">[a-zA-Z']*o[^o]*on</exception>
+            </pattern>
+            <message>Replace second-to-last suffix 'u' with 'o' because verbs at their object-focused future form may have an 'o' sound.</message>
+            <short>Change second-to-last suffix 'u' with 'o'.</short>
+        </rule>
+
+        <!-- <rule id="u-o_reduplication" name="Change 'o' to 'u'.">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">[a-zA-Z']*u[a-zA-Z']*o[a-zA-Z']*</token>
+            </pattern>
+            <message>Replace the 'o' with 'u' because the reduplicated syllable uses 'u'. </message>
+            <short>Change 'o' in the 2nd part to 'u'.</short>
+        </rule>
+
+        <rule id="u-o_reduplication_apo" name="Change 'o' to 'u'. (with apostrophe)">
+            <pattern case_sensitive="no"> 
+                <token regexp="yes">[a-zA-Z']*u</token>
+                <token regexp="yes">'</token>
+                <token regexp="yes">[a-zA-Z']*o[a-zA-Z']*</token>
+            </pattern>
+            <message>Replace the 'o' with 'u' because the reduplicated syllable uses 'u'. </message>
+            <short>Change 'o' in the 2nd part to 'u'.</short>
+        </rule> -->
+
+    </category>
+
+</rules>
