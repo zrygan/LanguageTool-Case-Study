@@ -7,6 +7,11 @@ This is a subdirectory in [Language Tool Case Study by Borja, Ching, and Ganitue
 
 This uses LanguageTool v6.4-STABLE. Unlike the entirity of the repository which uses LanguageTool v6.6 this subdirectory uses v6.4.
 
+## Download Extension File
+
+You may download the extension file here:
+[https://github.com/zrygan/LanguageTool-Case-Study/releases/tag/v1.0](Github Release v1.0)
+
 ## Changing the Grammar to the Experimental Grammars
 
 Simply replace the `grammar.xml` in `../extension/org/rules/tl` to the grammar file of your chosing.
