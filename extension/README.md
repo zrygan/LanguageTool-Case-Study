@@ -10,7 +10,7 @@ This uses LanguageTool v6.4-STABLE. Unlike the entirity of the repository which 
 ## Download Extension File
 
 You may download the extension file here:
-[https://github.com/zrygan/LanguageTool-Case-Study/releases/tag/v1.0](Github Release v1.0)
+<a href="https://github.com/zrygan/LanguageTool-Case-Study/releases/tag/v1.0">GitHub Release</a>
 
 ## Changing the Grammar to the Experimental Grammars
 
